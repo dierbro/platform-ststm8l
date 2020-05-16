@@ -32,7 +32,7 @@
     "framework-ststm8lspl": {
       "type": "framework",
       "optional": true,
-      "version": "0.20301.181217"
+      "version": "1.6.2"
     },
     "tool-stm8binutils": {
       "type": "uploader",
