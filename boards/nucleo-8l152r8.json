@@ -1,14 +1,14 @@
 {
   "build": {
     "core": "sduino",
-    "extra_flags": "-DSTM8S_DISCOVERY -DSTM8S105",
+    "extra_flags": "-DNUCLEO_8L152R8 -DSTM8L152R8",
     "f_cpu": "16000000L",
     "cpu": "stm8",
-    "mcu": "stm8s105c6t6",
-    "variant": "stm8sdisco"
+    "mcu": "stm8l152R8",
+    "variant": "stm8lnucleo"
   },
   "debug": {
-    "openocd_target": "stm8s",
+    "openocd_target": "stm8l",
     "tools": {
       "stlink": {
         "default": true,
@@ -17,7 +17,7 @@
             "-f",
             "scripts/interface/stlink.cfg",
             "-f",
-            "scripts/target/stm8s.cfg"
+            "scripts/target/stm8l.cfg"
           ],
           "executable": "bin/openocd",
           "package": "tool-openocd"
@@ -27,7 +27,6 @@
     }
   },
   "frameworks": [
-    "arduino",
     "spl"
   ],
   "upload": {
@@ -40,7 +39,7 @@
       "stlinkv2"
     ]
   },
-  "name": "ST STM8S-DISCOVERY",
+  "name": "ST NUCLEO-8L152R8",
   "url": "https://www.st.com/en/evaluation-tools/stm8s-discovery.html",
   "vendor": "ST"
 }
