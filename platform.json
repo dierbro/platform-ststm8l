@@ -27,7 +27,7 @@
      "toolchain-sdcc": {
       "type": "toolchain",
       "version": "~1.30804.10766"
-    }
+    },
     "framework-ststm8lspl": {
       "type": "framework",
       "optional": true,
