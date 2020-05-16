@@ -18,7 +18,7 @@ SPL
 Library that enables developers to easily exploit all the functions of the STM8
 microcontrollers to address a wide range of applications.
 
-https://www.st.com/en/embedded-software/stsw-stm8069.html
+https://www.st.com/en/embedded-software/stsw-stm8016.html
 """
 
 import sys
@@ -32,13 +32,13 @@ env = DefaultEnvironment()
 platform = env.PioPlatform()
 board_config = env.BoardConfig()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-ststm8spl")
+FRAMEWORK_DIR = platform.get_package_dir("framework-ststm8lspl")
 assert isdir(FRAMEWORK_DIR)
 
 
 def get_core_files():
-    if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8s_conf.h")):
-        print("Warning! Couldn't find stm8s_conf.h file!")
+    if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8l_conf.h")):
+        print("Warning! Couldn't find stm8l_conf.h file!")
         return []
 
     command = [
@@ -50,7 +50,7 @@ def get_core_files():
 
     result = exec_command(
         command,
-        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        cwd=join(FRAMEWORK_DIR, "Libraries", "STM8L15x_StdPeriph_Driver", "inc"),
         env=env['ENV']
     )
 
@@ -79,7 +79,7 @@ env.Append(
     ],
 
     CPPPATH=[
-        join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "inc"),
+        join(FRAMEWORK_DIR, "Libraries", "STM8L15x_StdPeriph_Driver", "inc"),
         "$PROJECTSRC_DIR",
     ]
 )
@@ -91,6 +91,6 @@ env.Append(
 
 env.BuildSources(
     join("$BUILD_DIR", "SPL"),
-    join(FRAMEWORK_DIR, "Libraries", "STM8S_StdPeriph_Driver", "src"),
+    join(FRAMEWORK_DIR, "Libraries", "STM8L15x_StdPeriph_Driver", "src"),
     src_filter=["-<*>"] + [" +<%s>" % f for f in get_core_files()]
 )
