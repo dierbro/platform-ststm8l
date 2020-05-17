@@ -145,14 +145,14 @@ if upload_protocol == "serial":
         env.VerboseAction("$UPLOADCMD", "Uploading $SOURCE")
     ]
 
-elif "stlink" in upload_protocol:
+elif "stlinkv21" in upload_protocol:
     mcu = board_config.get("build.partname")
     env.Replace(
         UPLOADER="stm8flash",
         UPLOADERFLAGS=[
             "-c", "$UPLOAD_PROTOCOL",
             "-p", "%s" % mcu,
-            "-s", "flash", "-w"
+            "-w"
         ],
         UPLOADCMD='"$UPLOADER" $UPLOADERFLAGS $SOURCE'
     )
