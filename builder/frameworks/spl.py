@@ -37,8 +37,8 @@ assert isdir(FRAMEWORK_DIR)
 
 
 def get_core_files():
-    if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8l_conf.h")):
-        print("Warning! Couldn't find stm8l_conf.h file!")
+    if not isfile(join(env.subst("$PROJECTSRC_DIR"), "stm8l15x_conf.h")):
+        print("Warning! Couldn't find stm8l15x_conf.h file!")
         return []
 
     command = [
