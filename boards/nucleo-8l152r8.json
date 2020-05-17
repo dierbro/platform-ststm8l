@@ -3,7 +3,7 @@
     "core": "sduino",
     "extra_flags": "-DNUCLEO_8L152R8 -DSTM8L152R8",
     "f_cpu": "16000000L",
-    "cpu": "stm8l15x",
+    "cpu": "stm8",
     "mcu": "stm8l152R8",
     "variant": "stm8lnucleo"
   },
