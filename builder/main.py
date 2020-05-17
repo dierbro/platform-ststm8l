@@ -146,12 +146,12 @@ if upload_protocol == "serial":
     ]
 
 elif "stlink" in upload_protocol:
-    mcu = board_config.get("build.mcu")
+    mcu = board_config.get("build.partname")
     env.Replace(
         UPLOADER="stm8flash",
         UPLOADERFLAGS=[
             "-c", "$UPLOAD_PROTOCOL",
-            "-p", "%s" % mcu[:8] + "?" + mcu[9],
+            "-p", "%s" % mcu,
             "-s", "flash", "-w"
         ],
         UPLOADCMD='"$UPLOADER" $UPLOADERFLAGS $SOURCE'
