@@ -5,6 +5,7 @@
     "f_cpu": "16000000L",
     "cpu": "stm8",
     "mcu": "STM8L15X_HD",
+    "partname": "stm8l152r8",
     "variant": "stm8lnucleo"
   },
   "debug": {
