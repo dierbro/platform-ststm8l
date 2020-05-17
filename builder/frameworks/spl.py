@@ -43,7 +43,7 @@ def get_core_files():
 
     command = [
         env.subst("$CC"), "-m%s" % board_config.get("build.cpu"),
-        "-D%s" % board_config.get("build.mcu").upper(),
+        "-D%s" % board_config.get("build.mcu"),
         "-I.", "-I", "%s" % env.subst("$PROJECTSRC_DIR"),
         "-Wp-MM", "-E", "stm8l15x.h"
     ]
