@@ -47,7 +47,7 @@ def get_core_files():
         "-I.", "-I", "%s" % env.subst("$PROJECTSRC_DIR"),
         "-Wp-MM", "-E", "stm8l15x.h"
     ]
-
+    print(command)
     result = exec_command(
         command,
         cwd=join(FRAMEWORK_DIR, "Libraries", "STM8L15x_StdPeriph_Driver", "inc"),
