@@ -33,11 +33,12 @@
   "upload": {
     "maximum_ram_size": 2048,
     "maximum_size": 32768,
-    "protocol": "stlink",
+    "protocol": "stlinkv21",
     "protocols": [
       "serial",
       "stlink",
-      "stlinkv2"
+      "stlinkv2",
+      "stlinkv21"
     ]
   },
   "name": "ST NUCLEO-8L152R8",
